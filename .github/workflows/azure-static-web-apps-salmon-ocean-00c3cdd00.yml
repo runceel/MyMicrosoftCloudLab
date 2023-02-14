@@ -31,6 +31,10 @@ jobs:
           api_location: "/samples/acs-to-teams-meeting/server/csharp" # Api source code path - optional
           output_location: "build" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+        env: # Add environment variables here
+          REACT_APP_ACS_USER_FUNCTION: https://salmon-ocean-00c3cdd00.2.azurestaticapps.net/api/ACSTokenFunction
+          REACT_APP_TEAMS_MEETING_FUNCTION: https://salmon-ocean-00c3cdd00.2.azurestaticapps.net/api/TeamsMeetingFunction
+
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
